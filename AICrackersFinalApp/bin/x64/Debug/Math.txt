@@ -1,0 +1,101 @@
+﻿20
+1.	Which is a solution of the differential equation x' = x?
+a. e^x
+b. x
+c. x^2
+d. ln(x)
+2.	Which is the value of the sum: Σ (k^2)?
+a. n*(n-1)/2
+b. n*(n+1)/2
+c. n*(n+1)*(2n+1)/2
+d. n*(n-1)*(2n+1)/2
+3.	Which is the value of the angle, which is the solution of the equation: sin(x) = 1?
+a. pi/2
+b. pi
+c. 3*pi/2
+d. pi/2 + 2*k*pi
+4.  The derivate of the function X^6+sinx + lnx is:
+a. X^5 + cosx + 1/x
+b. 6*X^5 + cosx + 1/x
+c. X + cosx + 1/x
+d. 1/x + sinx
+5.	Which is the value of the integral ∫ ((sin(sqrt(x)+a) * e^sqrt(x)) / sqrt(x))?
+a. sinx/x
+b. (sin(√x+a)−cos(√x+a))e√x+C
+c. sin^2(x)/x
+d. none of these above
+6.	Which function is reprezented in the graphic?
+a. cosx 
+b. x^2
+c. sinx
+d. e^x
+7.	Which is the trigonomeric formula: tg(a+b)?
+a. (tga - tgb)/(1+tga*tgb)
+b. tga + tgb
+c. (tga + tgb)/(1-tga*tgb)
+d. (tga * tgb)/(1+tga*tgb)
+8.	Given A = Q. Proof that A is countable.
+
+
+
+
+9.	Which are the eigenvalues of the matrix?
+a. 4, -2
+b. 4, 2
+c. 1, 1
+d. 2, -2
+10. Which is a solution of the system:xy+9y^2+9x^2=9,	x^2+y^2=1?
+a. x = 1, y = 0
+b. x = 2, y = 1
+c. x = 0, y = 3
+d. x = 9, y = -2
+11. Which expression gives the result 1 if 20 divide n, but 19 do not divide n?
+a. !(x%20||x%19)
+b. !(x%20&&x%19)
+c. (x%20||x%19)
+d. (x%20)&&(!(x%19))
+12. What would be displayed if we call f(12)?
+
+
+
+
+13. What does operator <<?
+
+
+
+
+14.	Which is the quickest sort algorithm in the general case?
+a. Quick Sort
+b. Select Sort
+c. Bubble Sort
+d. Merge Sort
+15.	Write the most efficient way to swap 2 numbers (noted a and b).
+
+
+
+
+16.	What is GC in Java?
+
+
+
+
+17.	What does sql query select * from Students where firstname = 'John'?
+
+
+
+
+18.	In which format is the file written?
+a. JSON
+b. HTML
+c. XML
+d. none of these above
+19. Write a function which counts the number if words in a string. Only ' ' is used as a separator.
+
+
+
+
+20. Given the function. What would display the code line: cout<<f(10)<<’ ’<<f(11); | printf(”%d %d”,f(10),f(11)); 
+a. 1 1
+b. 10 2
+c. 10 10 
+d. 4 3

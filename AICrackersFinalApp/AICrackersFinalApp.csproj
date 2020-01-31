@@ -1,0 +1,899 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Xamarin.Forms.3.5.0.169047\build\Xamarin.Forms.props" Condition="Exists('..\packages\Xamarin.Forms.3.5.0.169047\build\Xamarin.Forms.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CC192251-A067-46B0-9B37-2C9362B6E93A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>AICrackersFinalApp</RootNamespace>
+    <AssemblyName>AICrackersFinalApp</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.2.2.5\lib\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Imaging, Version=2.2.5.0, Culture=neutral, PublicKeyToken=ba8ddea9676ca48b, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Imaging.2.2.5\lib\AForge.Imaging.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Math, Version=2.2.5.0, Culture=neutral, PublicKeyToken=abba2e25397ee8c9, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Math.2.2.5\lib\AForge.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.2.2.5\lib\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.DirectShow.2.2.5\lib\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CognitiveServices.Speech.csharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=d2e6dcccb609e663, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CognitiveServices.Speech.1.2.0\lib\net461\Microsoft.CognitiveServices.Speech.csharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Rest.ClientRuntime, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Rest.ClientRuntime.2.3.5\lib\net45\Microsoft.Rest.ClientRuntime.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="QrWebCam, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\QrWebCam.1.0.0\lib\QrWebCam.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="VoIPSDK, Version=11.2.4.290, Culture=neutral, PublicKeyToken=4812fb35129b8487, processorArchitecture=MSIL">
+      <HintPath>..\packages\ozeki.voip.sip.client.11.2.4\lib\net40\VoIPSDK.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Forms.3.5.0.169047\lib\netstandard2.0\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Forms.3.5.0.169047\lib\netstandard2.0\Xamarin.Forms.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Forms.3.5.0.169047\lib\netstandard2.0\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="ZettaVision.CloudCore.Domain, Version=1.0.46.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZettaVision.CloudCore.Domain.1.0.46\lib\net461\ZettaVision.CloudCore.Domain.dll</HintPath>
+    </Reference>
+    <Reference Include="ZettaVision.CloudCore.Infrastructure.Microsoft.Rest, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZettaVision.CloudCore.Infrastructure.Microsoft.Rest.1.0.3\lib\net461\ZettaVision.CloudCore.Infrastructure.Microsoft.Rest.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing, Version=0.15.0.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.15.0\lib\net461\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation, Version=0.15.0.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.15.0\lib\net461\zxing.presentation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form10.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form10.Designer.cs">
+      <DependentUpon>Form10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form11.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form11.Designer.cs">
+      <DependentUpon>Form11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form12.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form12.Designer.cs">
+      <DependentUpon>Form12.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form13.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form13.Designer.cs">
+      <DependentUpon>Form13.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Form3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form3.Designer.cs">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form4.Designer.cs">
+      <DependentUpon>Form4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form5.Designer.cs">
+      <DependentUpon>Form5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form6.Designer.cs">
+      <DependentUpon>Form6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form7.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form7.Designer.cs">
+      <DependentUpon>Form7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form8.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form8.Designer.cs">
+      <DependentUpon>Form8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form9.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form9.Designer.cs">
+      <DependentUpon>Form9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Network.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form10.resx">
+      <DependentUpon>Form10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form11.resx">
+      <DependentUpon>Form11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form12.resx">
+      <DependentUpon>Form12.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form13.resx">
+      <DependentUpon>Form13.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form3.resx">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form4.resx">
+      <DependentUpon>Form4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form5.resx">
+      <DependentUpon>Form5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form6.resx">
+      <DependentUpon>Form6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form7.resx">
+      <DependentUpon>Form7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form8.resx">
+      <DependentUpon>Form8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form9.resx">
+      <DependentUpon>Form9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Screenshots\desktop.ini" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BOT23.html" />
+    <Content Include="Clair de Lune.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="codeseq.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Economics.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="function.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="json.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Math.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="matrix.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="pearl.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="russia.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Screenshots\gatsby.png" />
+    <Content Include="Screenshots\matrix.png" />
+    <Content Include="Screenshots\Screenshot %281%29.png" />
+    <Content Include="Screenshots\Screenshot %2810%29.png" />
+    <Content Include="Screenshots\Screenshot %28100%29.png" />
+    <Content Include="Screenshots\Screenshot %28101%29.png" />
+    <Content Include="Screenshots\Screenshot %28102%29.png" />
+    <Content Include="Screenshots\Screenshot %28103%29.png" />
+    <Content Include="Screenshots\Screenshot %28104%29.png" />
+    <Content Include="Screenshots\Screenshot %28105%29.png" />
+    <Content Include="Screenshots\Screenshot %28106%29.png" />
+    <Content Include="Screenshots\Screenshot %28107%29.png" />
+    <Content Include="Screenshots\Screenshot %28108%29.png" />
+    <Content Include="Screenshots\Screenshot %28109%29.png" />
+    <Content Include="Screenshots\Screenshot %2811%29.png" />
+    <Content Include="Screenshots\Screenshot %28110%29.png" />
+    <Content Include="Screenshots\Screenshot %28111%29.png" />
+    <Content Include="Screenshots\Screenshot %28112%29.png" />
+    <Content Include="Screenshots\Screenshot %28113%29.png" />
+    <Content Include="Screenshots\Screenshot %28114%29.png" />
+    <Content Include="Screenshots\Screenshot %28115%29.png" />
+    <Content Include="Screenshots\Screenshot %28116%29.png" />
+    <Content Include="Screenshots\Screenshot %28117%29.png" />
+    <Content Include="Screenshots\Screenshot %28118%29.png" />
+    <Content Include="Screenshots\Screenshot %28119%29.png" />
+    <Content Include="Screenshots\Screenshot %2812%29.png" />
+    <Content Include="Screenshots\Screenshot %28120%29.png" />
+    <Content Include="Screenshots\Screenshot %28121%29.png" />
+    <Content Include="Screenshots\Screenshot %28122%29.png" />
+    <Content Include="Screenshots\Screenshot %28123%29.png" />
+    <Content Include="Screenshots\Screenshot %28124%29.png" />
+    <Content Include="Screenshots\Screenshot %28125%29.png" />
+    <Content Include="Screenshots\Screenshot %28126%29.png" />
+    <Content Include="Screenshots\Screenshot %28127%29.png" />
+    <Content Include="Screenshots\Screenshot %28128%29.png" />
+    <Content Include="Screenshots\Screenshot %28129%29.png" />
+    <Content Include="Screenshots\Screenshot %2813%29.png" />
+    <Content Include="Screenshots\Screenshot %28130%29.png" />
+    <Content Include="Screenshots\Screenshot %28131%29.png" />
+    <Content Include="Screenshots\Screenshot %28132%29.png" />
+    <Content Include="Screenshots\Screenshot %28133%29.png" />
+    <Content Include="Screenshots\Screenshot %28134%29.png" />
+    <Content Include="Screenshots\Screenshot %28135%29.png" />
+    <Content Include="Screenshots\Screenshot %28136%29.png" />
+    <Content Include="Screenshots\Screenshot %28137%29.png" />
+    <Content Include="Screenshots\Screenshot %28138%29.png" />
+    <Content Include="Screenshots\Screenshot %28139%29.png" />
+    <Content Include="Screenshots\Screenshot %2814%29.png" />
+    <Content Include="Screenshots\Screenshot %28140%29.png" />
+    <Content Include="Screenshots\Screenshot %28141%29.png" />
+    <Content Include="Screenshots\Screenshot %28142%29.png" />
+    <Content Include="Screenshots\Screenshot %28143%29.png" />
+    <Content Include="Screenshots\Screenshot %28144%29.png" />
+    <Content Include="Screenshots\Screenshot %28145%29.png" />
+    <Content Include="Screenshots\Screenshot %28146%29.png" />
+    <Content Include="Screenshots\Screenshot %28147%29.png" />
+    <Content Include="Screenshots\Screenshot %28148%29.png" />
+    <Content Include="Screenshots\Screenshot %28149%29.png" />
+    <Content Include="Screenshots\Screenshot %2815%29.png" />
+    <Content Include="Screenshots\Screenshot %28150%29.png" />
+    <Content Include="Screenshots\Screenshot %28151%29.png" />
+    <Content Include="Screenshots\Screenshot %28152%29.png" />
+    <Content Include="Screenshots\Screenshot %28153%29.png" />
+    <Content Include="Screenshots\Screenshot %28154%29.png" />
+    <Content Include="Screenshots\Screenshot %28155%29.png" />
+    <Content Include="Screenshots\Screenshot %28156%29.png" />
+    <Content Include="Screenshots\Screenshot %28157%29.png" />
+    <Content Include="Screenshots\Screenshot %28158%29.png" />
+    <Content Include="Screenshots\Screenshot %28159%29.png" />
+    <Content Include="Screenshots\Screenshot %2816%29.png" />
+    <Content Include="Screenshots\Screenshot %28160%29.png" />
+    <Content Include="Screenshots\Screenshot %28161%29.png" />
+    <Content Include="Screenshots\Screenshot %28162%29.png" />
+    <Content Include="Screenshots\Screenshot %28163%29.png" />
+    <Content Include="Screenshots\Screenshot %28164%29.png" />
+    <Content Include="Screenshots\Screenshot %28165%29.png" />
+    <Content Include="Screenshots\Screenshot %28166%29.png" />
+    <Content Include="Screenshots\Screenshot %28167%29.png" />
+    <Content Include="Screenshots\Screenshot %28168%29.png" />
+    <Content Include="Screenshots\Screenshot %28169%29.png" />
+    <Content Include="Screenshots\Screenshot %2817%29.png" />
+    <Content Include="Screenshots\Screenshot %28170%29.png" />
+    <Content Include="Screenshots\Screenshot %28171%29.png" />
+    <Content Include="Screenshots\Screenshot %28172%29.png" />
+    <Content Include="Screenshots\Screenshot %28173%29.png" />
+    <Content Include="Screenshots\Screenshot %28174%29.png" />
+    <Content Include="Screenshots\Screenshot %28175%29.png" />
+    <Content Include="Screenshots\Screenshot %28176%29.png" />
+    <Content Include="Screenshots\Screenshot %28177%29.png" />
+    <Content Include="Screenshots\Screenshot %28178%29.png" />
+    <Content Include="Screenshots\Screenshot %28179%29.png" />
+    <Content Include="Screenshots\Screenshot %2818%29.png" />
+    <Content Include="Screenshots\Screenshot %28180%29.png" />
+    <Content Include="Screenshots\Screenshot %28181%29.png" />
+    <Content Include="Screenshots\Screenshot %28182%29.png" />
+    <Content Include="Screenshots\Screenshot %28183%29.png" />
+    <Content Include="Screenshots\Screenshot %28184%29.png" />
+    <Content Include="Screenshots\Screenshot %28185%29.png" />
+    <Content Include="Screenshots\Screenshot %28186%29.png" />
+    <Content Include="Screenshots\Screenshot %28187%29.png" />
+    <Content Include="Screenshots\Screenshot %28188%29.png" />
+    <Content Include="Screenshots\Screenshot %28189%29.png" />
+    <Content Include="Screenshots\Screenshot %2819%29.png" />
+    <Content Include="Screenshots\Screenshot %28190%29.png" />
+    <Content Include="Screenshots\Screenshot %28191%29.png" />
+    <Content Include="Screenshots\Screenshot %28192%29.png" />
+    <Content Include="Screenshots\Screenshot %28193%29.png" />
+    <Content Include="Screenshots\Screenshot %28194%29.png" />
+    <Content Include="Screenshots\Screenshot %28195%29.png" />
+    <Content Include="Screenshots\Screenshot %28196%29.png" />
+    <Content Include="Screenshots\Screenshot %28197%29.png" />
+    <Content Include="Screenshots\Screenshot %28198%29.png" />
+    <Content Include="Screenshots\Screenshot %28199%29.png" />
+    <Content Include="Screenshots\Screenshot %282%29.png" />
+    <Content Include="Screenshots\Screenshot %2820%29.png" />
+    <Content Include="Screenshots\Screenshot %28200%29.png" />
+    <Content Include="Screenshots\Screenshot %28201%29.png" />
+    <Content Include="Screenshots\Screenshot %28202%29.png" />
+    <Content Include="Screenshots\Screenshot %28203%29.png" />
+    <Content Include="Screenshots\Screenshot %28204%29.png" />
+    <Content Include="Screenshots\Screenshot %28205%29.png" />
+    <Content Include="Screenshots\Screenshot %28206%29.png" />
+    <Content Include="Screenshots\Screenshot %28207%29.png" />
+    <Content Include="Screenshots\Screenshot %28208%29.png" />
+    <Content Include="Screenshots\Screenshot %28209%29.png" />
+    <Content Include="Screenshots\Screenshot %2821%29.png" />
+    <Content Include="Screenshots\Screenshot %28210%29.png" />
+    <Content Include="Screenshots\Screenshot %28211%29.png" />
+    <Content Include="Screenshots\Screenshot %28212%29.png" />
+    <Content Include="Screenshots\Screenshot %28213%29.png" />
+    <Content Include="Screenshots\Screenshot %28214%29.png" />
+    <Content Include="Screenshots\Screenshot %28215%29.png" />
+    <Content Include="Screenshots\Screenshot %28216%29.png" />
+    <Content Include="Screenshots\Screenshot %28217%29.png" />
+    <Content Include="Screenshots\Screenshot %28218%29.png" />
+    <Content Include="Screenshots\Screenshot %28219%29.png" />
+    <Content Include="Screenshots\Screenshot %2822%29.png" />
+    <Content Include="Screenshots\Screenshot %28220%29.png" />
+    <Content Include="Screenshots\Screenshot %28221%29.png" />
+    <Content Include="Screenshots\Screenshot %28222%29.png" />
+    <Content Include="Screenshots\Screenshot %28223%29.png" />
+    <Content Include="Screenshots\Screenshot %28224%29.png" />
+    <Content Include="Screenshots\Screenshot %28225%29.png" />
+    <Content Include="Screenshots\Screenshot %28226%29.png" />
+    <Content Include="Screenshots\Screenshot %28227%29.png" />
+    <Content Include="Screenshots\Screenshot %28228%29.png" />
+    <Content Include="Screenshots\Screenshot %28229%29.png" />
+    <Content Include="Screenshots\Screenshot %2823%29.png" />
+    <Content Include="Screenshots\Screenshot %28230%29.png" />
+    <Content Include="Screenshots\Screenshot %28231%29.png" />
+    <Content Include="Screenshots\Screenshot %28232%29.png" />
+    <Content Include="Screenshots\Screenshot %28233%29.png" />
+    <Content Include="Screenshots\Screenshot %28234%29.png" />
+    <Content Include="Screenshots\Screenshot %28235%29.png" />
+    <Content Include="Screenshots\Screenshot %28236%29.png" />
+    <Content Include="Screenshots\Screenshot %28237%29.png" />
+    <Content Include="Screenshots\Screenshot %28238%29.png" />
+    <Content Include="Screenshots\Screenshot %28239%29.png" />
+    <Content Include="Screenshots\Screenshot %2824%29.png" />
+    <Content Include="Screenshots\Screenshot %28240%29.png" />
+    <Content Include="Screenshots\Screenshot %28241%29.png" />
+    <Content Include="Screenshots\Screenshot %28242%29.png" />
+    <Content Include="Screenshots\Screenshot %28243%29.png" />
+    <Content Include="Screenshots\Screenshot %28244%29.png" />
+    <Content Include="Screenshots\Screenshot %28245%29.png" />
+    <Content Include="Screenshots\Screenshot %28246%29.png" />
+    <Content Include="Screenshots\Screenshot %28247%29.png" />
+    <Content Include="Screenshots\Screenshot %28248%29.png" />
+    <Content Include="Screenshots\Screenshot %28249%29.png" />
+    <Content Include="Screenshots\Screenshot %2825%29.png" />
+    <Content Include="Screenshots\Screenshot %28250%29.png" />
+    <Content Include="Screenshots\Screenshot %28251%29.png" />
+    <Content Include="Screenshots\Screenshot %28252%29.png" />
+    <Content Include="Screenshots\Screenshot %28253%29.png" />
+    <Content Include="Screenshots\Screenshot %28254%29.png" />
+    <Content Include="Screenshots\Screenshot %28255%29.png" />
+    <Content Include="Screenshots\Screenshot %28256%29.png" />
+    <Content Include="Screenshots\Screenshot %28257%29.png" />
+    <Content Include="Screenshots\Screenshot %28258%29.png" />
+    <Content Include="Screenshots\Screenshot %28259%29.png" />
+    <Content Include="Screenshots\Screenshot %2826%29.png" />
+    <Content Include="Screenshots\Screenshot %28260%29.png" />
+    <Content Include="Screenshots\Screenshot %28261%29.png" />
+    <Content Include="Screenshots\Screenshot %28262%29.png" />
+    <Content Include="Screenshots\Screenshot %28263%29.png" />
+    <Content Include="Screenshots\Screenshot %28264%29.png" />
+    <Content Include="Screenshots\Screenshot %28265%29.png" />
+    <Content Include="Screenshots\Screenshot %28266%29.png" />
+    <Content Include="Screenshots\Screenshot %28267%29.png" />
+    <Content Include="Screenshots\Screenshot %28268%29.png" />
+    <Content Include="Screenshots\Screenshot %28269%29.png" />
+    <Content Include="Screenshots\Screenshot %2827%29.png" />
+    <Content Include="Screenshots\Screenshot %28270%29.png" />
+    <Content Include="Screenshots\Screenshot %28271%29.png" />
+    <Content Include="Screenshots\Screenshot %28272%29.png" />
+    <Content Include="Screenshots\Screenshot %28273%29.png" />
+    <Content Include="Screenshots\Screenshot %28274%29.png" />
+    <Content Include="Screenshots\Screenshot %28275%29.png" />
+    <Content Include="Screenshots\Screenshot %28276%29.png" />
+    <Content Include="Screenshots\Screenshot %28277%29.png" />
+    <Content Include="Screenshots\Screenshot %28278%29.png" />
+    <Content Include="Screenshots\Screenshot %28279%29.png" />
+    <Content Include="Screenshots\Screenshot %2828%29.png" />
+    <Content Include="Screenshots\Screenshot %28280%29.png" />
+    <Content Include="Screenshots\Screenshot %28281%29.png" />
+    <Content Include="Screenshots\Screenshot %28282%29.png" />
+    <Content Include="Screenshots\Screenshot %28283%29.png" />
+    <Content Include="Screenshots\Screenshot %28284%29.png" />
+    <Content Include="Screenshots\Screenshot %28285%29.png" />
+    <Content Include="Screenshots\Screenshot %28286%29.png" />
+    <Content Include="Screenshots\Screenshot %28287%29.png" />
+    <Content Include="Screenshots\Screenshot %28288%29.png" />
+    <Content Include="Screenshots\Screenshot %28289%29.png" />
+    <Content Include="Screenshots\Screenshot %2829%29.png" />
+    <Content Include="Screenshots\Screenshot %28290%29.png" />
+    <Content Include="Screenshots\Screenshot %28291%29.png" />
+    <Content Include="Screenshots\Screenshot %28292%29.png" />
+    <Content Include="Screenshots\Screenshot %28293%29.png" />
+    <Content Include="Screenshots\Screenshot %28294%29.png" />
+    <Content Include="Screenshots\Screenshot %28295%29.png" />
+    <Content Include="Screenshots\Screenshot %28296%29.png" />
+    <Content Include="Screenshots\Screenshot %28297%29.png" />
+    <Content Include="Screenshots\Screenshot %28298%29.png" />
+    <Content Include="Screenshots\Screenshot %28299%29.png" />
+    <Content Include="Screenshots\Screenshot %283%29.png" />
+    <Content Include="Screenshots\Screenshot %2830%29.png" />
+    <Content Include="Screenshots\Screenshot %28300%29.png" />
+    <Content Include="Screenshots\Screenshot %28301%29.png" />
+    <Content Include="Screenshots\Screenshot %28302%29.png" />
+    <Content Include="Screenshots\Screenshot %28303%29.png" />
+    <Content Include="Screenshots\Screenshot %28304%29.png" />
+    <Content Include="Screenshots\Screenshot %28305%29.png" />
+    <Content Include="Screenshots\Screenshot %28306%29.png" />
+    <Content Include="Screenshots\Screenshot %28307%29.png" />
+    <Content Include="Screenshots\Screenshot %28308%29.png" />
+    <Content Include="Screenshots\Screenshot %28309%29.png" />
+    <Content Include="Screenshots\Screenshot %2831%29.png" />
+    <Content Include="Screenshots\Screenshot %28310%29.png" />
+    <Content Include="Screenshots\Screenshot %28311%29.png" />
+    <Content Include="Screenshots\Screenshot %28312%29.png" />
+    <Content Include="Screenshots\Screenshot %28313%29.png" />
+    <Content Include="Screenshots\Screenshot %28314%29.png" />
+    <Content Include="Screenshots\Screenshot %28315%29.png" />
+    <Content Include="Screenshots\Screenshot %28316%29.png" />
+    <Content Include="Screenshots\Screenshot %28317%29.png" />
+    <Content Include="Screenshots\Screenshot %28318%29.png" />
+    <Content Include="Screenshots\Screenshot %28319%29.png" />
+    <Content Include="Screenshots\Screenshot %2832%29.png" />
+    <Content Include="Screenshots\Screenshot %28320%29.png" />
+    <Content Include="Screenshots\Screenshot %28321%29.png" />
+    <Content Include="Screenshots\Screenshot %28322%29.png" />
+    <Content Include="Screenshots\Screenshot %28323%29.png" />
+    <Content Include="Screenshots\Screenshot %28324%29.png" />
+    <Content Include="Screenshots\Screenshot %28325%29.png" />
+    <Content Include="Screenshots\Screenshot %28326%29.png" />
+    <Content Include="Screenshots\Screenshot %28327%29.png" />
+    <Content Include="Screenshots\Screenshot %28328%29.png" />
+    <Content Include="Screenshots\Screenshot %28329%29.png" />
+    <Content Include="Screenshots\Screenshot %2833%29.png" />
+    <Content Include="Screenshots\Screenshot %28330%29.png" />
+    <Content Include="Screenshots\Screenshot %28331%29.png" />
+    <Content Include="Screenshots\Screenshot %28332%29.png" />
+    <Content Include="Screenshots\Screenshot %28333%29.png" />
+    <Content Include="Screenshots\Screenshot %28334%29.png" />
+    <Content Include="Screenshots\Screenshot %28335%29.png" />
+    <Content Include="Screenshots\Screenshot %28336%29.png" />
+    <Content Include="Screenshots\Screenshot %28337%29.png" />
+    <Content Include="Screenshots\Screenshot %28338%29.png" />
+    <Content Include="Screenshots\Screenshot %28339%29.png" />
+    <Content Include="Screenshots\Screenshot %2834%29.png" />
+    <Content Include="Screenshots\Screenshot %28340%29.png" />
+    <Content Include="Screenshots\Screenshot %28341%29.png" />
+    <Content Include="Screenshots\Screenshot %28342%29.png" />
+    <Content Include="Screenshots\Screenshot %28343%29.png" />
+    <Content Include="Screenshots\Screenshot %28344%29.png" />
+    <Content Include="Screenshots\Screenshot %28345%29.png" />
+    <Content Include="Screenshots\Screenshot %28346%29.png" />
+    <Content Include="Screenshots\Screenshot %28347%29.png" />
+    <Content Include="Screenshots\Screenshot %28348%29.png" />
+    <Content Include="Screenshots\Screenshot %28349%29.png" />
+    <Content Include="Screenshots\Screenshot %2835%29.png" />
+    <Content Include="Screenshots\Screenshot %28350%29.png" />
+    <Content Include="Screenshots\Screenshot %28351%29.png" />
+    <Content Include="Screenshots\Screenshot %28352%29.png" />
+    <Content Include="Screenshots\Screenshot %28353%29.png" />
+    <Content Include="Screenshots\Screenshot %28354%29.png" />
+    <Content Include="Screenshots\Screenshot %28355%29.png" />
+    <Content Include="Screenshots\Screenshot %28356%29.png" />
+    <Content Include="Screenshots\Screenshot %28357%29.png" />
+    <Content Include="Screenshots\Screenshot %28358%29.png" />
+    <Content Include="Screenshots\Screenshot %28359%29.png" />
+    <Content Include="Screenshots\Screenshot %2836%29.png" />
+    <Content Include="Screenshots\Screenshot %28360%29.png" />
+    <Content Include="Screenshots\Screenshot %28361%29.png" />
+    <Content Include="Screenshots\Screenshot %28362%29.png" />
+    <Content Include="Screenshots\Screenshot %28363%29.png" />
+    <Content Include="Screenshots\Screenshot %28364%29.png" />
+    <Content Include="Screenshots\Screenshot %28365%29.png" />
+    <Content Include="Screenshots\Screenshot %28366%29.png" />
+    <Content Include="Screenshots\Screenshot %28367%29.png" />
+    <Content Include="Screenshots\Screenshot %28368%29.png" />
+    <Content Include="Screenshots\Screenshot %28369%29.png" />
+    <Content Include="Screenshots\Screenshot %2837%29.png" />
+    <Content Include="Screenshots\Screenshot %28370%29.png" />
+    <Content Include="Screenshots\Screenshot %28371%29.png" />
+    <Content Include="Screenshots\Screenshot %28372%29.png" />
+    <Content Include="Screenshots\Screenshot %28373%29.png" />
+    <Content Include="Screenshots\Screenshot %28374%29.png" />
+    <Content Include="Screenshots\Screenshot %28375%29.png" />
+    <Content Include="Screenshots\Screenshot %28376%29.png" />
+    <Content Include="Screenshots\Screenshot %28377%29.png" />
+    <Content Include="Screenshots\Screenshot %28378%29.png" />
+    <Content Include="Screenshots\Screenshot %28379%29.png" />
+    <Content Include="Screenshots\Screenshot %2838%29.png" />
+    <Content Include="Screenshots\Screenshot %28380%29.png" />
+    <Content Include="Screenshots\Screenshot %28381%29.png" />
+    <Content Include="Screenshots\Screenshot %28382%29.png" />
+    <Content Include="Screenshots\Screenshot %28383%29.png" />
+    <Content Include="Screenshots\Screenshot %28384%29.png" />
+    <Content Include="Screenshots\Screenshot %28385%29.png" />
+    <Content Include="Screenshots\Screenshot %28386%29.png" />
+    <Content Include="Screenshots\Screenshot %28387%29.png" />
+    <Content Include="Screenshots\Screenshot %28388%29.png" />
+    <Content Include="Screenshots\Screenshot %28389%29.png" />
+    <Content Include="Screenshots\Screenshot %2839%29.png" />
+    <Content Include="Screenshots\Screenshot %28390%29.png" />
+    <Content Include="Screenshots\Screenshot %28391%29.png" />
+    <Content Include="Screenshots\Screenshot %28392%29.png" />
+    <Content Include="Screenshots\Screenshot %28393%29.png" />
+    <Content Include="Screenshots\Screenshot %28394%29.png" />
+    <Content Include="Screenshots\Screenshot %28395%29.png" />
+    <Content Include="Screenshots\Screenshot %28396%29.png" />
+    <Content Include="Screenshots\Screenshot %28397%29.png" />
+    <Content Include="Screenshots\Screenshot %28398%29.png" />
+    <Content Include="Screenshots\Screenshot %28399%29.png" />
+    <Content Include="Screenshots\Screenshot %284%29.png" />
+    <Content Include="Screenshots\Screenshot %2840%29.png" />
+    <Content Include="Screenshots\Screenshot %28400%29.png" />
+    <Content Include="Screenshots\Screenshot %28401%29.png" />
+    <Content Include="Screenshots\Screenshot %28402%29.png" />
+    <Content Include="Screenshots\Screenshot %28403%29.png" />
+    <Content Include="Screenshots\Screenshot %28404%29.png" />
+    <Content Include="Screenshots\Screenshot %28405%29.png" />
+    <Content Include="Screenshots\Screenshot %28406%29.png" />
+    <Content Include="Screenshots\Screenshot %28407%29.png" />
+    <Content Include="Screenshots\Screenshot %28408%29.png" />
+    <Content Include="Screenshots\Screenshot %28409%29.png" />
+    <Content Include="Screenshots\Screenshot %2841%29.png" />
+    <Content Include="Screenshots\Screenshot %28410%29.png" />
+    <Content Include="Screenshots\Screenshot %28411%29.png" />
+    <Content Include="Screenshots\Screenshot %28412%29.png" />
+    <Content Include="Screenshots\Screenshot %28413%29.png" />
+    <Content Include="Screenshots\Screenshot %28414%29.png" />
+    <Content Include="Screenshots\Screenshot %28415%29.png" />
+    <Content Include="Screenshots\Screenshot %28416%29.png" />
+    <Content Include="Screenshots\Screenshot %28417%29.png" />
+    <Content Include="Screenshots\Screenshot %28418%29.png" />
+    <Content Include="Screenshots\Screenshot %28419%29.png" />
+    <Content Include="Screenshots\Screenshot %2842%29.png" />
+    <Content Include="Screenshots\Screenshot %28420%29.png" />
+    <Content Include="Screenshots\Screenshot %28421%29.png" />
+    <Content Include="Screenshots\Screenshot %28422%29.png" />
+    <Content Include="Screenshots\Screenshot %28423%29.png" />
+    <Content Include="Screenshots\Screenshot %28424%29.png" />
+    <Content Include="Screenshots\Screenshot %28425%29.png" />
+    <Content Include="Screenshots\Screenshot %28426%29.png" />
+    <Content Include="Screenshots\Screenshot %28427%29.png" />
+    <Content Include="Screenshots\Screenshot %28428%29.png" />
+    <Content Include="Screenshots\Screenshot %28429%29.png" />
+    <Content Include="Screenshots\Screenshot %2843%29.png" />
+    <Content Include="Screenshots\Screenshot %28430%29.png" />
+    <Content Include="Screenshots\Screenshot %28431%29.png" />
+    <Content Include="Screenshots\Screenshot %28432%29.png" />
+    <Content Include="Screenshots\Screenshot %28433%29.png" />
+    <Content Include="Screenshots\Screenshot %28434%29.png" />
+    <Content Include="Screenshots\Screenshot %28435%29.png" />
+    <Content Include="Screenshots\Screenshot %28436%29.png" />
+    <Content Include="Screenshots\Screenshot %28437%29.png" />
+    <Content Include="Screenshots\Screenshot %28438%29.png" />
+    <Content Include="Screenshots\Screenshot %28439%29.png" />
+    <Content Include="Screenshots\Screenshot %2844%29.png" />
+    <Content Include="Screenshots\Screenshot %28440%29.png" />
+    <Content Include="Screenshots\Screenshot %28441%29.png" />
+    <Content Include="Screenshots\Screenshot %28442%29.png" />
+    <Content Include="Screenshots\Screenshot %28443%29.png" />
+    <Content Include="Screenshots\Screenshot %28444%29.png" />
+    <Content Include="Screenshots\Screenshot %28445%29.png" />
+    <Content Include="Screenshots\Screenshot %28446%29.png" />
+    <Content Include="Screenshots\Screenshot %28447%29.png" />
+    <Content Include="Screenshots\Screenshot %28448%29.png" />
+    <Content Include="Screenshots\Screenshot %28449%29.png" />
+    <Content Include="Screenshots\Screenshot %2845%29.png" />
+    <Content Include="Screenshots\Screenshot %28450%29.png" />
+    <Content Include="Screenshots\Screenshot %28451%29.png" />
+    <Content Include="Screenshots\Screenshot %28452%29.png" />
+    <Content Include="Screenshots\Screenshot %28453%29.png" />
+    <Content Include="Screenshots\Screenshot %28454%29.png" />
+    <Content Include="Screenshots\Screenshot %28455%29.png" />
+    <Content Include="Screenshots\Screenshot %28456%29.png" />
+    <Content Include="Screenshots\Screenshot %28457%29.png" />
+    <Content Include="Screenshots\Screenshot %28458%29.png" />
+    <Content Include="Screenshots\Screenshot %28459%29.png" />
+    <Content Include="Screenshots\Screenshot %2846%29.png" />
+    <Content Include="Screenshots\Screenshot %28460%29.png" />
+    <Content Include="Screenshots\Screenshot %28461%29.png" />
+    <Content Include="Screenshots\Screenshot %28462%29.png" />
+    <Content Include="Screenshots\Screenshot %28463%29.png" />
+    <Content Include="Screenshots\Screenshot %28464%29.png" />
+    <Content Include="Screenshots\Screenshot %28465%29.png" />
+    <Content Include="Screenshots\Screenshot %28466%29.png" />
+    <Content Include="Screenshots\Screenshot %28467%29.png" />
+    <Content Include="Screenshots\Screenshot %28468%29.png" />
+    <Content Include="Screenshots\Screenshot %28469%29.png" />
+    <Content Include="Screenshots\Screenshot %2847%29.png" />
+    <Content Include="Screenshots\Screenshot %28470%29.png" />
+    <Content Include="Screenshots\Screenshot %28471%29.png" />
+    <Content Include="Screenshots\Screenshot %28472%29.png" />
+    <Content Include="Screenshots\Screenshot %28473%29.png" />
+    <Content Include="Screenshots\Screenshot %28474%29.png" />
+    <Content Include="Screenshots\Screenshot %2848%29.png" />
+    <Content Include="Screenshots\Screenshot %2849%29.png" />
+    <Content Include="Screenshots\Screenshot %285%29.png" />
+    <Content Include="Screenshots\Screenshot %2850%29.png" />
+    <Content Include="Screenshots\Screenshot %2851%29.png" />
+    <Content Include="Screenshots\Screenshot %2852%29.png" />
+    <Content Include="Screenshots\Screenshot %2853%29.png" />
+    <Content Include="Screenshots\Screenshot %2854%29.png" />
+    <Content Include="Screenshots\Screenshot %2855%29.png" />
+    <Content Include="Screenshots\Screenshot %2856%29.png" />
+    <Content Include="Screenshots\Screenshot %2857%29.png" />
+    <Content Include="Screenshots\Screenshot %2858%29.png" />
+    <Content Include="Screenshots\Screenshot %2859%29.png" />
+    <Content Include="Screenshots\Screenshot %286%29.png" />
+    <Content Include="Screenshots\Screenshot %2860%29.png" />
+    <Content Include="Screenshots\Screenshot %2861%29.png" />
+    <Content Include="Screenshots\Screenshot %2862%29.png" />
+    <Content Include="Screenshots\Screenshot %2863%29.png" />
+    <Content Include="Screenshots\Screenshot %2864%29.png" />
+    <Content Include="Screenshots\Screenshot %2865%29.png" />
+    <Content Include="Screenshots\Screenshot %2866%29.png" />
+    <Content Include="Screenshots\Screenshot %2867%29.png" />
+    <Content Include="Screenshots\Screenshot %2868%29.png" />
+    <Content Include="Screenshots\Screenshot %2869%29.png" />
+    <Content Include="Screenshots\Screenshot %287%29.png" />
+    <Content Include="Screenshots\Screenshot %2870%29.png" />
+    <Content Include="Screenshots\Screenshot %2871%29.png" />
+    <Content Include="Screenshots\Screenshot %2872%29.png" />
+    <Content Include="Screenshots\Screenshot %2873%29.png" />
+    <Content Include="Screenshots\Screenshot %2874%29.png" />
+    <Content Include="Screenshots\Screenshot %2875%29.png" />
+    <Content Include="Screenshots\Screenshot %2876%29.png" />
+    <Content Include="Screenshots\Screenshot %2877%29.png" />
+    <Content Include="Screenshots\Screenshot %2878%29.png" />
+    <Content Include="Screenshots\Screenshot %2879%29.png" />
+    <Content Include="Screenshots\Screenshot %288%29.png" />
+    <Content Include="Screenshots\Screenshot %2880%29.png" />
+    <Content Include="Screenshots\Screenshot %2881%29.png" />
+    <Content Include="Screenshots\Screenshot %2882%29.png" />
+    <Content Include="Screenshots\Screenshot %2883%29.png" />
+    <Content Include="Screenshots\Screenshot %2884%29.png" />
+    <Content Include="Screenshots\Screenshot %2885%29.png" />
+    <Content Include="Screenshots\Screenshot %2886%29.png" />
+    <Content Include="Screenshots\Screenshot %2887%29.png" />
+    <Content Include="Screenshots\Screenshot %2888%29.png" />
+    <Content Include="Screenshots\Screenshot %2889%29.png" />
+    <Content Include="Screenshots\Screenshot %289%29.png" />
+    <Content Include="Screenshots\Screenshot %2890%29.png" />
+    <Content Include="Screenshots\Screenshot %2891%29.png" />
+    <Content Include="Screenshots\Screenshot %2892%29.png" />
+    <Content Include="Screenshots\Screenshot %2893%29.png" />
+    <Content Include="Screenshots\Screenshot %2894%29.png" />
+    <Content Include="Screenshots\Screenshot %2895%29.png" />
+    <Content Include="Screenshots\Screenshot %2896%29.png" />
+    <Content Include="Screenshots\Screenshot %2897%29.png" />
+    <Content Include="Screenshots\Screenshot %2898%29.png" />
+    <Content Include="Screenshots\Screenshot %2899%29.png" />
+    <Content Include="Screenshots\sonet106.png" />
+    <Content Include="Screenshots\sun.png" />
+    <Content Include="sea.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="trajan.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="trig_cosine.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Villa-Lobos Schottish-Choro played by Kevin Ayers.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="waterloo.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="zimbabwe.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\imagepsi.jpg" />
+    <None Include="Resources\background-images-blue-1.jpg" />
+    <Content Include="Arts.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="carul.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="carulboi.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="eggs.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="europe2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="gatsby.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Geography.html" />
+    <Content Include="lilies.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Philology.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="pieta.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Psihology.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\music-background-video-animation_njewqa97bl__F0000.png" />
+    <None Include="Resources\bookback.jpg" />
+    <None Include="Resources\books-background-images-3.jpg" />
+    <None Include="Resources\Questionmark.jpg" />
+    <None Include="Resources\45447-200.png" />
+    <None Include="Resources\InterviewInProgress-NewSize2-720x400.png" />
+    <Content Include="Resources\Triads.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Science.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="forward.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\BlogImage_Chat.jpg" />
+    <None Include="Resources\market-intel-icon-small.png" />
+    <None Include="Resources\performance.png" />
+    <None Include="Resources\right_monotone_arrow_next_play.png" />
+    <None Include="Resources\Next-512.png" />
+    <None Include="Resources\UKrQNJ.jpg" />
+    <None Include="Resources\University.jpg" />
+    <None Include="Resources\college.png" />
+    <Content Include="Questions.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\college1.png" />
+    <None Include="Resources\back.jpg" />
+    <None Include="Resources\imaginip.jpg" />
+    <None Include="Resources\girl.gif" />
+    <None Include="Resources\scienc.jpg" />
+    <None Include="Resources\5.jpg" />
+    <None Include="Resources\Icons8.ico" />
+    <Content Include="sonet106.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sun.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="University.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\graduate.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Ozeki\Media\Video\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.CognitiveServices.Speech.1.2.0\build\net461\Microsoft.CognitiveServices.Speech.targets" Condition="Exists('..\packages\Microsoft.CognitiveServices.Speech.1.2.0\build\net461\Microsoft.CognitiveServices.Speech.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CognitiveServices.Speech.1.2.0\build\net461\Microsoft.CognitiveServices.Speech.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CognitiveServices.Speech.1.2.0\build\net461\Microsoft.CognitiveServices.Speech.targets'))" />
+    <Error Condition="!Exists('..\packages\Xamarin.Forms.3.5.0.169047\build\Xamarin.Forms.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Forms.3.5.0.169047\build\Xamarin.Forms.props'))" />
+    <Error Condition="!Exists('..\packages\Xamarin.Forms.3.5.0.169047\build\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Xamarin.Forms.3.5.0.169047\build\Xamarin.Forms.targets'))" />
+  </Target>
+  <Import Project="..\packages\Xamarin.Forms.3.5.0.169047\build\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.3.5.0.169047\build\Xamarin.Forms.targets')" />
+</Project>

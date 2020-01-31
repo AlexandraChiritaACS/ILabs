@@ -1,0 +1,13 @@
+C:\Users\dell\source\repos\AICrackersFinalApp\AICrackersFinalApp\bin\Debug\forward.png
+C:\Users\dell\source\repos\AICrackersFinalApp\AICrackersFinalApp\bin\Debug\AICrackersFinalApp.exe.config
+C:\Users\dell\source\repos\AICrackersFinalApp\AICrackersFinalApp\bin\Debug\AICrackersFinalApp.exe
+C:\Users\dell\source\repos\AICrackersFinalApp\AICrackersFinalApp\bin\Debug\AICrackersFinalApp.pdb
+C:\Users\dell\source\repos\AICrackersFinalApp\AICrackersFinalApp\obj\Debug\AICrackersFinalApp.csprojAssemblyReference.cache
+C:\Users\dell\source\repos\AICrackersFinalApp\AICrackersFinalApp\obj\Debug\AICrackersFinalApp.Form1.resources
+C:\Users\dell\source\repos\AICrackersFinalApp\AICrackersFinalApp\obj\Debug\AICrackersFinalApp.Properties.Resources.resources
+C:\Users\dell\source\repos\AICrackersFinalApp\AICrackersFinalApp\obj\Debug\AICrackersFinalApp.csproj.GenerateResource.cache
+C:\Users\dell\source\repos\AICrackersFinalApp\AICrackersFinalApp\obj\Debug\AICrackersFinalApp.csproj.CoreCompileInputs.cache
+C:\Users\dell\source\repos\AICrackersFinalApp\AICrackersFinalApp\obj\Debug\AICrackersFinalApp.exe
+C:\Users\dell\source\repos\AICrackersFinalApp\AICrackersFinalApp\obj\Debug\AICrackersFinalApp.pdb
+C:\Users\dell\source\repos\AICrackersFinalApp\AICrackersFinalApp\bin\Debug\University.jpg
+C:\Users\dell\source\repos\AICrackersFinalApp\AICrackersFinalApp\obj\Debug\AICrackersFinalApp.Form2.resources
